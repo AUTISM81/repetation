@@ -2,12 +2,12 @@ public class diceFunction {
 
     public static void main(String[] args) {
 
-        int count1 = 0;
-        int count2 = 0;
-        int count3 = 0;
-        int count4 = 0;
-        int count5 = 0;
-        int count6 = 0;
+        double count1 = 0;
+        double count2 = 0;
+        double count3 = 0;
+        double count4 = 0;
+        double count5 = 0;
+        double count6 = 0;
 
         for (int i = 0; i <= 10000; i++){
             int dice = rolling();
@@ -28,7 +28,7 @@ public class diceFunction {
             }
         }
 
-        float average;
+        double average;
 
         average = count1/10000;
         System.out.println("average for rolling " + "1" + " is " + average);
