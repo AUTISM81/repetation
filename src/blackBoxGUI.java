@@ -7,6 +7,6 @@ public class blackBoxGUI {
     private JTextField textField1;
 
     private void createUIComponents() {
-        
+
     }
 }
