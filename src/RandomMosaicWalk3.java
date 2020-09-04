@@ -28,7 +28,6 @@ public class RandomMosaicWalk3 {
         while (true) {
             changeToNeighbour(currentRow, currentColumn);
             randomMove();
-            Mosaic.delay(5);  // Remove this line to speed things up!
         }
     }  // end main
 
@@ -64,19 +63,54 @@ public class RandomMosaicWalk3 {
     }  // end changeToRandomColor
 
     static void changeToNeighbour(int RowNum, int colNum) {
-        int red;
-        int green;
-        int blue;
+        int red = 0;
+        int green = 0;
+        int blue = 0;
 
-        if (RowNum >= 1 && colNum >= 1) {
-            red = Mosaic.getRed(RowNum - 1, colNum -1);
-            green = Mosaic.getGreen(RowNum - 1, colNum -1);
-            blue = Mosaic.getBlue(RowNum - 1, colNum -1);
+        double choice =Math.round (Math.random()*3 +1);
+
+        if (choice == 1) {
+            if (RowNum >= 1) {
+                red = Mosaic.getRed(RowNum - 1, colNum);
+                green = Mosaic.getGreen(RowNum - 1, colNum);
+                blue = Mosaic.getBlue(RowNum - 1, colNum);
+            } else if (RowNum == 0) {
+                red = Mosaic.getRed(0, colNum);
+                green = Mosaic.getGreen(0, colNum);
+                blue = Mosaic.getBlue(0, colNum);
+            }
+        } else if (choice == 2){
+            if (RowNum <= 18) {
+                red = Mosaic.getRed(RowNum + 1, colNum);
+                green = Mosaic.getGreen(RowNum + 1, colNum);
+                blue = Mosaic.getBlue(RowNum + 1, colNum);
+            } else if (RowNum == 19) {
+                red = Mosaic.getRed(0, colNum);
+                green = Mosaic.getGreen(0, colNum);
+                blue = Mosaic.getBlue(0, colNum);
+            }
+        } else if (choice == 3){
+            if (colNum <= 28) {
+                red = Mosaic.getRed(RowNum, colNum + 1);
+                green = Mosaic.getGreen(RowNum, colNum + 1);
+                blue = Mosaic.getBlue(RowNum, colNum + 1);
+            } else if (colNum == 29) {
+                red = Mosaic.getRed(RowNum, 0);
+                green = Mosaic.getGreen(RowNum, 0);
+                blue = Mosaic.getBlue(RowNum, 0);
+            }
         } else {
-            red = Mosaic.getRed(RowNum + 1, colNum + 1);
-            green = Mosaic.getGreen(RowNum + 1, colNum + 1);
-            blue = Mosaic.getBlue(RowNum + 1, colNum + 1);
+            if (colNum >= 1) {
+                red = Mosaic.getRed(RowNum, colNum - 1);
+                green = Mosaic.getGreen(RowNum, colNum - 1);
+                blue = Mosaic.getBlue(RowNum, colNum - 1);
+            } else if (colNum == 30) {
+                red = Mosaic.getRed(RowNum, 0);
+                green = Mosaic.getGreen(RowNum, 0);
+                blue = Mosaic.getBlue(RowNum, 0);
+            }
         }
+
         Mosaic.setColor(RowNum,colNum, red,green,blue);
     }
 
