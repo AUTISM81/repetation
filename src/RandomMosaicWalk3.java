@@ -8,9 +8,9 @@ import com.sun.rowset.internal.Row;
  */
 public class RandomMosaicWalk3 {
 
-    final static int ROWS = 20;        // Number of rows in mosaic.
-    final static int COLUMNS = 30;     // Number of columns in mosaic.
-    final static int SQUARE_SIZE = 20; // Size of each square in mosaic.
+    final static int ROWS = 80;        // Number of rows in mosaic.
+    final static int COLUMNS = 80;     // Number of columns in mosaic.
+    final static int SQUARE_SIZE = 10; // Size of each square in mosaic.
 
     static int currentRow;    // Row currently containing the disturbance.
     static int currentColumn; // Column currently containing disturbance.
@@ -23,6 +23,7 @@ public class RandomMosaicWalk3 {
     public static void main(String[] args) {
         Mosaic.open( ROWS, COLUMNS, SQUARE_SIZE, SQUARE_SIZE );
         fillWithRandomColors();
+        Mosaic.setUse3DEffect(true);
         currentRow = ROWS / 2;   // start at center of window
         currentColumn = COLUMNS / 2;
         while (true) {
@@ -80,21 +81,21 @@ public class RandomMosaicWalk3 {
                 blue = Mosaic.getBlue(0, colNum);
             }
         } else if (choice == 2){
-            if (RowNum <= 18) {
+            if (RowNum <= 78) {
                 red = Mosaic.getRed(RowNum + 1, colNum);
                 green = Mosaic.getGreen(RowNum + 1, colNum);
                 blue = Mosaic.getBlue(RowNum + 1, colNum);
-            } else if (RowNum == 19) {
+            } else if (RowNum == 79) {
                 red = Mosaic.getRed(0, colNum);
                 green = Mosaic.getGreen(0, colNum);
                 blue = Mosaic.getBlue(0, colNum);
             }
         } else if (choice == 3){
-            if (colNum <= 28) {
+            if (colNum <= 78) {
                 red = Mosaic.getRed(RowNum, colNum + 1);
                 green = Mosaic.getGreen(RowNum, colNum + 1);
                 blue = Mosaic.getBlue(RowNum, colNum + 1);
-            } else if (colNum == 29) {
+            } else if (colNum == 79) {
                 red = Mosaic.getRed(RowNum, 0);
                 green = Mosaic.getGreen(RowNum, 0);
                 blue = Mosaic.getBlue(RowNum, 0);
@@ -104,7 +105,7 @@ public class RandomMosaicWalk3 {
                 red = Mosaic.getRed(RowNum, colNum - 1);
                 green = Mosaic.getGreen(RowNum, colNum - 1);
                 blue = Mosaic.getBlue(RowNum, colNum - 1);
-            } else if (colNum == 30) {
+            } else if (colNum == 79) {
                 red = Mosaic.getRed(RowNum, 0);
                 green = Mosaic.getGreen(RowNum, 0);
                 blue = Mosaic.getBlue(RowNum, 0);
