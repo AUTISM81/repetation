@@ -36,4 +36,9 @@ public class Circle {  // Save as "Circle.java"
     public double getCircumference() {
         return radius*2*Math.PI;
     }
+
+    public String toString() {
+        String text = "Circle[Radius=" + radius + "]";
+        return text;
+    }
 }
