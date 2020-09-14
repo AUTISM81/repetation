@@ -5,17 +5,26 @@ public class RectangleTest {
 
 
         System.out.println("Length:" + r.getLength());
+        System.out.println();
         System.out.println("width:" + r.getWidth());
+        System.out.println();
         System.out.println("area:" + r.getArea());
-        System.out.println("Perimeter" + r.getPerimeter());
+        System.out.println();
+        System.out.println("Perimeter: " + r.getPerimeter());
+        System.out.println();
 
         System.out.println("Sets length and width to 6 and 4");
         r.setLength(6);
         r.setWidth(4);
 
+        System.out.println();
+
         System.out.println("Length:" + r.getLength());
+        System.out.println();
         System.out.println("width:" + r.getWidth());
+        System.out.println();
         System.out.println("area:" + r.getArea());
-        System.out.println("Perimeter" + r.getPerimeter());
+        System.out.println();
+        System.out.println("Perimeter: " + r.getPerimeter());
     }
 }
